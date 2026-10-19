@@ -22,4 +22,6 @@ function drawX(){const v=+xSelE.value;let items;if(xMode==='P'){const p=X.prom[v
 function setMode(m){xMode=m;xmPb.classList.toggle('on',m==='P');xmNb.classList.toggle('on',m==='N');fillSel();}
 function refreshCross(){X=buildX(+xMes.value);colTot=X.total.vals;natOrder=X.nacs.map((n,i)=>({n,i,t:colTot[i]}));maxCell=Math.max(1,...X.prom.flatMap(p=>p.vals));document.getElementById('xDesc').textContent=X.prom.length+' dependencias × '+X.nacs.length+' nacionalidades · total '+X.total.total;fillSel();drawX();}
 xmPb.onclick=()=>{setMode('P');drawX()};xmNb.onclick=()=>{setMode('N');drawX()};xSelE.addEventListener('change',drawX);xMes.addEventListener('change',refreshCross);refreshCross();
-</script></body></html>
+</script>
+</body>
+</html>
